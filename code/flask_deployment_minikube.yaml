@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assign2flask
+  labels:
+    app: assign2flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assign2flask
+  template:
+    metadata:
+      labels:
+        app: assign2flask
+    spec:
+      containers:
+        - name: assign2flask
+          image: changpeng3336/assign2:latest
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
